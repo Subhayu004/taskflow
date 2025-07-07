@@ -41,7 +41,7 @@
 
 ## 📸 App Preview
 
-> *(Replace with your actual screenshot or gif after uploading it to your repo)*
+> *Image of the project*
 
 ![TaskFlow Preview](assets/screenshot.png)
 
