@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Environment variable files
+.env
+
+# VSCode settings (optional)
+.vscode/
+
+# macOS & Windows junk
+.DS_Store
+Thumbs.db
+
+# Task data file
+tasks.json
