@@ -1,5 +1,5 @@
 let tasks = [];
-const API_URL = "http://127.0.0.1:5000/tasks";
+const API_URL = "https://taskflow-mf12.onrender.com";
 
 const addTaskForm = document.getElementById('addTaskForm');
 const taskInput = document.getElementById('taskInput');
