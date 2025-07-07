@@ -1,5 +1,5 @@
 let tasks = [];
-const API_URL = "https://taskflow-mf12.onrender.com";
+const API_URL = "/tasks";
 
 const addTaskForm = document.getElementById('addTaskForm');
 const taskInput = document.getElementById('taskInput');
@@ -8,7 +8,6 @@ const totalTasksEl = document.getElementById('totalTasks');
 const completedTasksEl = document.getElementById('completedTasks');
 const pendingTasksEl = document.getElementById('pendingTasks');
 
-// Fetch tasks from backend
 async function loadTasks() {
     const res = await fetch(API_URL);
     tasks = await res.json();
@@ -16,12 +15,11 @@ async function loadTasks() {
     updateStats();
 }
 
-// Add task
 addTaskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const taskText = taskInput.value.trim();
     if (!taskText) {
-        showNotification("Please enter a task!", "error");
+        alert("Please enter a task!");
         return;
     }
 
@@ -33,23 +31,18 @@ addTaskForm.addEventListener('submit', async (e) => {
 
     taskInput.value = "";
     await loadTasks();
-    showNotification("Task added!", "success");
 });
 
-// Toggle task
 async function toggleTask(taskId) {
     await fetch(`${API_URL}/${taskId}`, { method: "PUT" });
     await loadTasks();
 }
 
-// Delete task
 async function deleteTask(taskId) {
     await fetch(`${API_URL}/${taskId}`, { method: "DELETE" });
     await loadTasks();
-    showNotification("Task deleted", "success");
 }
 
-// Render tasks
 function renderTasks() {
     if (tasks.length === 0) {
         tasksContainer.innerHTML = `
@@ -81,17 +74,6 @@ function updateStats() {
     totalTasksEl.textContent = total;
     completedTasksEl.textContent = completed;
     pendingTasksEl.textContent = pending;
-}
-
-function showNotification(message, type = "success") {
-    const notification = document.createElement("div");
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-    document.body.appendChild(notification);
-
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
 }
 
 window.onload = loadTasks;
