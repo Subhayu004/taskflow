@@ -1,6 +1,6 @@
 # ✅ TaskFlow — Modern To-Do List Web App
 
-**TaskFlow** is a modern and responsive to-do list web application designed to help you manage tasks efficiently. It combines a lightweight Python Flask backend with a clean and interactive HTML/CSS/JavaScript frontend.
+**TaskFlow** is a modern and responsive to-do list web application built to help users manage daily tasks efficiently. It combines a lightweight Python Flask backend with a polished, interactive frontend using HTML, CSS, and JavaScript.
 
 🌐 **Live Demo**: [taskflow-mf12.onrender.com](https://taskflow-mf12.onrender.com/)
 
@@ -10,11 +10,10 @@
 
 - ✅ Add, complete, and delete tasks
 - 💾 Persistent data storage using `tasks.json`
-- ⚡ Real-time updates via Fetch API
-- 🎨 Smooth UI animations and transitions
-- 📱 Mobile responsive layout
-- 🔁 Instant synchronization between frontend and backend
-- 🌍 Cross-origin support using `Flask-CORS`
+- 🔁 Real-time updates between frontend and backend via Fetch API
+- 🎨 Animated UI feedback for task actions
+- 📱 Fully responsive design for mobile and desktop
+- 🌐 Cross-origin support using `Flask-CORS`
 
 ---
 
@@ -23,37 +22,38 @@
 ### 🔹 Frontend
 
 - HTML5
-- CSS3 (including animations)
+- CSS3 (with animations)
 - JavaScript (Vanilla + Fetch API)
 
 ### 🔹 Backend
 
 - Python 3
 - Flask (micro web framework)
-- Flask-CORS (to handle cross-origin requests)
-- JSON file storage (`tasks.json`)
+- Flask-CORS (handles cross-origin requests)
+- JSON file storage (`tasks.json` for persistence)
 
 ### 🔹 Version Control
 
-- Git & GitHub
+- Git
+- GitHub
 
 ---
 
 ## 📸 App Preview
 
-> Add a screenshot or gif here (optional)
-> Example:
-> ![TaskFlow Preview](https://via.placeholder.com/900x400?text=TaskFlow+App+Preview)
+> *(Replace with your actual screenshot or gif after uploading it to your repo)*
+
+![TaskFlow Preview](assets/screenshot.png)
 
 ---
 
 ## 🔧 Getting Started (Run Locally)
 
-Follow the steps below to set up and run TaskFlow on your local machine:
+To run TaskFlow on your local machine, follow the steps below:
 
 ---
 
-### 1. 📦 Clone the Repository
+### 1. 📥 Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/taskflow.git
