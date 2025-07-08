@@ -39,7 +39,7 @@
 
 ## 📸 Preview
 
-![TaskFlow Preview](preview.png)  
+![TaskFlow Preview](screenshot.png)  
 > *Modern layout, task filters, animated transitions*
 
 ---
