@@ -69,7 +69,7 @@ Stay tuned for its release! 🚧
 
 **TaskFlow Preview**
 
-![Image of the site](assets/preview.png)
+![Image of the site](assets/screenshot.png)
 
 ---
 
