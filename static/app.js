@@ -323,3 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
 window.askAIForTaskSuggestions = askAIForTaskSuggestions;
 window.askAIForSchedule = askAIForSchedule;
 window.askAIForProductivityTips = askAIForProductivityTips;
+    document.getElementById('aiAssistantButton').addEventListener('click', function () {
+        alert('AI Assistant feature coming soon!');
+        // You can later replace this with a modal or chat popup
+    });

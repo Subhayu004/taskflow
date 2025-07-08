@@ -1086,3 +1086,30 @@ body {
     background: var(--bg-container);
     border-color: var(--border-color);
 }
+.floating-ai-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    animation: aiPulse 3s infinite;
+}
+
+.floating-ai-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes aiPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
