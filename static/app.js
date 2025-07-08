@@ -3,6 +3,7 @@ let currentFilter = 'all';
 let userName = localStorage.getItem('taskflowUsername') || '';
 let taskHistory = [];
 
+//const API_BASE = "http://127.0.0.1:5000";
 const API_BASE = "https://taskflow-mf12.onrender.com";
 
 // Initialize app
@@ -228,3 +229,97 @@ document.getElementById('addTaskForm').addEventListener('submit', function (e) {
 document.getElementById('nameInput').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') setUserName();
 });
+// AI Assistant Integration for TaskFlow
+// Add this to your existing app.js file
+
+// AI Configuration
+const OPENAI_API_KEY = ''; // ❗️DO NOT expose keys in frontend. Use secure backend call.
+const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
+
+// AI Assistant State
+let aiChatVisible = false;
+let aiChatHistory = [];
+
+// Initialize AI Assistant UI
+function initializeAIAssistant() {
+    // ... [UI setup code remains unchanged]
+}
+
+// Toggle AI Chat Visibility
+function toggleAIChat() {
+    // ... [unchanged]
+}
+
+// Send Message to AI
+async function sendAIMessage() {
+    // ... [unchanged]
+}
+
+// ⚠️ API call should ideally be handled by a backend server
+async function callOpenAIAPI(userMessage) {
+    if (!OPENAI_API_KEY) {
+        throw new Error("OpenAI API key not set. Please use a secure backend to handle requests.");
+    }
+
+    const systemPrompt = `You are TaskFlow AI Assistant, a helpful AI that helps users manage their tasks and time. 
+
+Current user context:
+- Username: ${userName}
+- Total tasks: ${tasks.length}
+- Completed tasks: ${tasks.filter(t => t.done).length}
+- Pending tasks: ${tasks.filter(t => !t.done).length}
+- Current tasks: ${JSON.stringify(tasks.slice(0, 5))}
+
+Your capabilities:
+1. Help organize tasks efficiently
+2. Create time schedules and routines
+3. Adjust time management strategies
+4. Provide reminders and notifications
+5. Warn about potential productivity issues
+
+Be concise, helpful, and actionable. If you suggest creating tasks or schedules, format them clearly. Use emojis appropriately.`;
+
+    const response = await fetch(OPENAI_API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${OPENAI_API_KEY}` // Will fail if not set
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo',
+            messages: [
+                { role: 'system', content: systemPrompt },
+                ...aiChatHistory.slice(-6),
+                { role: 'user', content: userMessage }
+            ],
+            max_tokens: 500,
+            temperature: 0.7
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error('API request failed');
+    }
+
+    const data = await response.json();
+    const aiResponse = data.choices[0].message.content;
+
+    aiChatHistory.push(
+        { role: 'user', content: userMessage },
+        { role: 'assistant', content: aiResponse }
+    );
+
+    return aiResponse;
+}
+
+// ... [All other functions remain unchanged]
+
+// Initialize AI Assistant when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initializeAIAssistant, 1000);
+});
+
+// Export functions for global access
+window.askAIForTaskSuggestions = askAIForTaskSuggestions;
+window.askAIForSchedule = askAIForSchedule;
+window.askAIForProductivityTips = askAIForProductivityTips;
