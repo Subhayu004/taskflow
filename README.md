@@ -39,7 +39,7 @@
 
 ## 📸 Preview
 
-![TaskFlow Preview](assests/screenshot.png)  
+![TaskFlow Preview](assets/screenshot.png)  
 > *Image of the site*
 
 ---
