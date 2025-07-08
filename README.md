@@ -39,8 +39,8 @@
 
 ## 📸 Preview
 
-![TaskFlow Preview](screenshot.png)  
-> *Modern layout, task filters, animated transitions*
+![TaskFlow Preview](assests/screenshot.png)  
+> *Image of the site*
 
 ---
 
