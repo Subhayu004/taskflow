@@ -82,3 +82,8 @@ Follow these steps to run **TaskFlow** on your local machine:
 ```bash
 git clone https://github.com/your-username/taskflow.git
 cd taskflow
+go to app.js file and do this : //const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = "https://taskflow-mf12.onrender.com";
+
+Then open the cmd on the root directory and type python app.py
+then copy the local host link to your browser 
