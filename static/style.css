@@ -1113,3 +1113,11 @@ body {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
 }
+.footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary); /* or just use gray */
+    background-color: transparent;
+    margin-top: 20px;
+}

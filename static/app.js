@@ -3,8 +3,8 @@ let currentFilter = 'all';
 let userName = localStorage.getItem('taskflowUsername') || '';
 let taskHistory = [];
 
-//const API_BASE = "http://127.0.0.1:5000";
-const API_BASE = "https://taskflow-mf12.onrender.com";
+const API_BASE = "http://127.0.0.1:5000";
+//const API_BASE = "https://taskflow-mf12.onrender.com";
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', function () {
@@ -323,7 +323,3 @@ document.addEventListener('DOMContentLoaded', function() {
 window.askAIForTaskSuggestions = askAIForTaskSuggestions;
 window.askAIForSchedule = askAIForSchedule;
 window.askAIForProductivityTips = askAIForProductivityTips;
-    document.getElementById('aiAssistantButton').addEventListener('click', function () {
-        alert('AI Assistant feature coming soon!');
-        // You can later replace this with a modal or chat popup
-    });
